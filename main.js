@@ -87,22 +87,29 @@ let current = 0;
 next.addEventListener('click',showNext);
 prev.addEventListener('click',showPrev);
 
+/* Auto Slider*/
+var auto = setInterval(showNext,7000);
+
 function showNext () {
 		if(current === images.length - 1){
 			current = -1;
 		}
 		bg.style.backgroundImage = images[current + 1];
 		current ++;
-		
+		clearInterval(auto);                    //Reset auto slider
+		auto = setInterval(showNext,7000);      //Reset auto slider   
 		if(current === 0){m2()}else{m1()};
 }
+
+
 function showPrev(){
 		if(current === 0){
 			current = images.length;
 		}
 		bg.style.backgroundImage = images[current - 1];
 		current --;
-		clearInterval(auto);
+		clearInterval(auto);                    //Reset auto slider
+		auto = setInterval(showNext,7000);      //Reset auto slider   
 		if(current === 0){m2()}else{m1()};
 }
 
@@ -162,8 +169,7 @@ function start(){
 loop1 = setTimeout(start,1500); 
 }
 
-/* Auto Slider*/
-let auto = setInterval(showNext,7000);
+
 
 /*Call owl carousel*/
 $(document).ready(function() {

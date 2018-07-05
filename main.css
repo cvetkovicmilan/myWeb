@@ -81,7 +81,7 @@ header nav .social{
 	width:30px;
 	height:30px;
 	border-radius:50%;
-	font-size:20px;
+	font-size:17px;
 	background: #fff; 
 }
 header nav .social i:nth-child(1):hover {
@@ -233,6 +233,15 @@ header nav .social i:nth-child(3):hover {
 .rtl {
 	animation: toLeft .3s .3s ease forwards;
 }
+.offset:before {        /**/
+	display: block; 
+ 	content: " "; 
+  	height: 70px;      /* Give height of your fixed element */  	
+    visibility: hidden; 
+    position: relative;
+	
+	z-index: -1;
+}
 /* About section*/
 #about_us {
 	padding:20px;
@@ -340,20 +349,20 @@ hr {
 }
 #projects {
 	background-color: #08c;
-	height: 80%;
+	height: 85%;
 }
 #projects h2 {
 	color: #fff;
-	padding: 50px 20px 20px 20px;
-	margin: 70px 0 0 76px;
+	padding: 30px 20px 20px 20px;
+	margin: 10px 0 0 76px;
 	font-size: 1.6em;
 	letter-spacing: 2px;
 }
 /*Gallery*/
 #gallery {
 	width: 70%;
-	height: 70%;
-	margin: 50px auto;
+	height: 80%;
+	margin: 40px auto;
 	border: #fff solid 5px;
 	border-radius: 6px;
 	background: #fff;
